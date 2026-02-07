@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tabla de Factores</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        @media print { .no-print { display: none; } }
+    </style>
+</head>
+<body class="container mt-5">
+    <h2 class="mb-4">Tabla de Factores para i = {{ interes }}%</h2>
+    <table class="table table-striped table-bordered mt-3"> 
+        <thead class="table-dark">
+            <tr>
+                <th>n</th>
+                <th>F/P</th>
+                <th>P/F</th>
+                <th>A/F</th>
+                <th>A/P</th>
+                <th>F/A</th>
+                <th>P/A</th>
+                <th>A/G</th>
+                <th>P/G</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for fila in datos %}
+            <tr>
+                <td>{{ fila['n'] }}</td>
+                <td>{{ fila['F/P'] }}</td>
+                <td>{{ fila['P/F'] }}</td>
+                <td>{{ fila['A/F'] }}</td>
+                <td>{{ fila['A/P'] }}</td>
+                <td>{{ fila['F/A'] }}</td>
+                <td>{{ fila['P/A'] }}</td>
+                <td>{{ fila['A/G'] }}</td>
+                <td>{{ fila['P/G'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="mt-4 no-print">
+        <button onclick="window.print()" class="btn btn-secondary">Imprimir Tabla</button>
+        <a href="/" class="btn btn-primary">Generar Nueva Tabla</a>
+        <button class="btn btn-info">Guardar en base de datos PROXIMAMENTE</button>
+    </div>
+</body>
+</html>    
